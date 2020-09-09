@@ -10,11 +10,11 @@
     <!--整合MyBatis-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="user" value="root" ></property>
-        <property name="password" value="hqt123" ></property>
+        <property name="password" value="123456" ></property>
 <!--        <property name="jdbcUrl" value="jdbc:mysql://localhost:3307/test?-->
 <!--        useUnicode=true&amp;characterEncoding=UTF-8" />-->
         <!--mysql8.0使用com.mysql.cj.jdbc.Driver，5.0使用com.mysql.jdbc.Driver-->
-        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/book" ></property>
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/rbac" ></property>
         <property name="driverClass" value="com.mysql.jdbc.Driver" ></property>
         <property name="initialPoolSize" value="5" ></property>
         <property name="maxPoolSize" value="10" ></property>
