@@ -8,7 +8,7 @@
 
     <typeAliases>
         <!-- 指定一个包名，MyBatis会在包名下搜索需要的JavaBean-->
-        <package name="com.ysu.entity"/>
+        <package name="com.ysu.po"/>
     </typeAliases>
 
 </configuration>

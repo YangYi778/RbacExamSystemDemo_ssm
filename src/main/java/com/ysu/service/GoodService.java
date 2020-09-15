@@ -4,7 +4,7 @@ import com.ysu.po.Good;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-@Mapper
+
 public interface GoodService {
 
     public List<Good> findAll();
