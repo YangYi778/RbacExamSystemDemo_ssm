@@ -1,12 +1,13 @@
 package com.ysu.controller;
 
-import com.ysu.entity.Good;
+import com.ysu.po.Good;
 import com.ysu.service.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import java.math.BigDecimal;
 
 @Controller
 @RequestMapping("/good")
@@ -42,7 +43,7 @@ public class GoodHandler {
         Good good = new Good();
         good.setId(8);
         good.setName("RTX 4090");
-        good.setPrice(25999);
+        good.setPrice(new BigDecimal(25999));
         good.setNum(199);
         return insertGood(good);
     }

@@ -1,6 +1,6 @@
 package com.ysu.service;
 
-import com.ysu.entity.Good;
+import com.ysu.po.Good;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

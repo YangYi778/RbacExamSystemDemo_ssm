@@ -1,7 +1,8 @@
 package com.ysu.service.impl;
 
-import com.ysu.entity.Good;
-import com.ysu.repository.GoodRepository;
+import com.ysu.dao.GoodMapper;
+import com.ysu.po.Good;
+import com.ysu.po.GoodExample;
 import com.ysu.service.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,30 +13,33 @@ import java.util.List;
 public class GoodServiceImpl implements GoodService {
 
     @Autowired
-    private GoodRepository goodRepository;
+    private GoodMapper goodMapper;
 
     @Override
     public List<Good> findAll() {
-        return goodRepository.findAll();
+        GoodExample example = new GoodExample();
+        GoodExample.Criteria criteria = example.createCriteria();
+        criteria.andIdGreaterThanOrEqualTo(1);
+        return goodMapper.selectByExample(example);
     }
 
     @Override
     public Good findById(int id) {
-        return goodRepository.findById(id);
+        return goodMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public void updateById(Good good) {
-        goodRepository.updateById(good);
+        goodMapper.updateByPrimaryKeySelective(good);
     }
 
     @Override
     public void deleteById(int id) {
-        goodRepository.deleteById(id);
+        goodMapper.deleteByPrimaryKey(id);
     }
 
     @Override
     public void insertGood(Good good) {
-        goodRepository.insertGood(good);
+        goodMapper.insertSelective(good);
     }
 }

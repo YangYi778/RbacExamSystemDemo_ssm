@@ -23,12 +23,14 @@
     <!--配置MyBatis SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" ></property>
-        <property name="mapperLocations" value="classpath:com/ysu/repository/*.xml" ></property>
+        <property name="mapperLocations" value="classpath:com/ysu/mapper/*.xml" ></property>
         <property name="configLocation" value="classpath:config.xml" ></property>
     </bean>
 
     <!--扫描自定义的Mapper接口-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.ysu.repository" ></property>
+        <property name="basePackage" value="com.ysu.dao" ></property>
     </bean>
+
+    <bean id="goodService" class="com.ysu.service.impl.GoodServiceImpl"></bean>
 </beans>
